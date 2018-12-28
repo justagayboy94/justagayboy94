@@ -1,11 +1,15 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
-import Header from './header'
+import { Header } from '../Header/Header';
+
 import './layout.css'
 
-const Layout = ({ children }) => (
+export interface Props {
+  children: React.ReactNode;
+}
+
+export const Layout: React.SFC<Props> = ({ children }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -28,17 +32,8 @@ const Layout = ({ children }) => (
           }}
         >
           {children}
-          <footer>
-            © 2018, Built with <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
         </div>
       </>
     )}
   />
 )
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-export default Layout

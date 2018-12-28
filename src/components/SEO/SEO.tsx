@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
@@ -16,7 +15,7 @@ export interface Props {
   title: string;
 }
 
-const SEO: React.SFC<Props> = ({ description, lang, meta, keywords, title }) => (
+export const SEO: React.SFC<Props> = ({ description, lang, meta, keywords, title }) => (
   <StaticQuery
     query={detailsQuery}
     render={data => {

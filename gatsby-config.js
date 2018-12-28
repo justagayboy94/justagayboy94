@@ -1,8 +1,10 @@
+require("dotenv").config()
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `justagayboy94`,
+    description: `Personal blog of justagayboy94`,
+    author: `@justagayboy94`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -18,18 +20,27 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
+        name: `justagayboy94`,
         short_name: `starter`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    'gatsby-plugin-typescript'
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
+    'gatsby-plugin-typescript',
+    {
+      resolve: `gatsby-source-twitter`,
+      options: {
+          q: '#justagayboy94 from:justagayboy94 filter:images',
+          tweet_mode: 'extended',
+          fetchAllResults: true,
+          credentials: {
+            consumer_key: process.env.TWITTER_API_CONSUMER_KEY,
+            consumer_secret: process.env.TWITTER_API_CONSUMER_SECRET,
+            bearer_token: process.env.TWITTER_API_CONSUMER_TOKEN
+          }
+      }
+    }
   ],
 }
