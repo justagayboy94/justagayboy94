@@ -7,6 +7,8 @@ export enum Color {
 }
 
 export interface Theme {
+  rythmBase: number;
+
   container: {
     paddingLeft: number;
     paddingRight: number;
@@ -31,7 +33,9 @@ export const theme: Theme = {
     backgroundColor: Color.Primary,
     color: Color.MainFontColor,
     fontSize: RHYTHM_BASE * 7,
-    paddingBottom: RHYTHM_BASE * 4,
-    paddingTop: RHYTHM_BASE * 4
-  }
+    paddingBottom: RHYTHM_BASE * 5,
+    paddingTop: RHYTHM_BASE * 5
+  },
+
+  rythmBase: RHYTHM_BASE
 };

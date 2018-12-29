@@ -3,5 +3,5 @@ import React from "react";
 import { Header } from "./Header";
 
 storiesOf("Components/Header", module).add("default", () => (
-  <Header title="My website" />
+  <Header title="justawebsite" avatar="avatar.jpeg" />
 ));
