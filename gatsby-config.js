@@ -56,6 +56,12 @@ module.exports = {
           families: ["Kalam"]
         }
       }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-131430514-1"
+      }
     }
   ]
 };
