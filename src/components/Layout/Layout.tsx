@@ -3,6 +3,7 @@ import React from "react";
 import { ThemeProvider } from "../../helpers/styled-components";
 import avatar from "../../images/avatar.jpg";
 import { theme } from "../../themes/default";
+import { Avatar } from "../Avatar/Avatar";
 import { Header } from "../Header/Header";
 
 import "./layout.css";
@@ -25,7 +26,10 @@ export const Layout: React.SFC<Props> = ({ children }) => (
       `}
       render={data => (
         <>
-          <Header title={data.site.siteMetadata.title} avatar={avatar} />
+          <Header
+            title={data.site.siteMetadata.title}
+            avatar={<Avatar src={avatar} />}
+          />
           <div
             style={{
               margin: `0 auto`,
