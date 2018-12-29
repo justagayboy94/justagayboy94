@@ -1,7 +1,8 @@
-import React from 'react'
-import styled from "styled-components"
-
-import { SEO } from '../components/SEO/SEO'
+import React from "react";
+import styled from "styled-components";
+import { SEO } from "../components/SEO/SEO";
+import { ThemeProvider } from "../helpers/styled-components";
+import { theme } from "../themes/default";
 
 const Container = styled.div`
   margin: 3rem auto;
@@ -10,13 +11,15 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-`
+`;
 
 const AboutPage = () => (
-  <Container>
-    <SEO title="About" />
-    <h1>About</h1>
-  </Container>
-)
+  <ThemeProvider theme={theme}>
+    <Container>
+      <SEO title="About" />
+      <h1>About</h1>
+    </Container>
+  </ThemeProvider>
+);
 
-export default AboutPage
+export default AboutPage;

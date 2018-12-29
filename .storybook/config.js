@@ -1,4 +1,8 @@
-import { configure } from "@storybook/react";
+import React from "react";
+
+import { addDecorator, configure } from "@storybook/react";
+import { theme } from "../src/themes/default";
+import { ThemeProvider } from "../src/helpers/styled-components";
 
 // automatically import all files ending in *.stories.js
 const req = require.context("../src", true, /.story.tsx$/);
@@ -18,5 +22,7 @@ global.__PATH_PREFIX__ = "";
 window.___navigate = pathname => {
   action("NavigateTo:")(pathname);
 };
+
+addDecorator(story => <ThemeProvider theme={theme}>{story()}</ThemeProvider>);
 
 configure(loadStories, module);

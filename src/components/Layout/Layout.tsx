@@ -1,6 +1,7 @@
 import { graphql, StaticQuery } from "gatsby";
 import React from "react";
-
+import { ThemeProvider } from "../../helpers/styled-components";
+import { theme } from "../../themes/default";
 import { Header } from "../Header/Header";
 
 import "./layout.css";
@@ -10,30 +11,32 @@ export interface Props {
 }
 
 export const Layout: React.SFC<Props> = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
+  <ThemeProvider theme={theme}>
+    <StaticQuery
+      query={graphql`
+        query SiteTitleQuery {
+          site {
+            siteMetadata {
+              title
+            }
           }
         }
-      }
-    `}
-    render={data => (
-      <>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: `0px 1.0875rem 1.45rem`,
-            paddingTop: 0
-          }}
-        >
-          {children}
-        </div>
-      </>
-    )}
-  />
+      `}
+      render={data => (
+        <>
+          <Header siteTitle={data.site.siteMetadata.title} />
+          <div
+            style={{
+              margin: `0 auto`,
+              maxWidth: 960,
+              padding: `0px 1.0875rem 1.45rem`,
+              paddingTop: 0
+            }}
+          >
+            {children}
+          </div>
+        </>
+      )}
+    />
+  </ThemeProvider>
 );
