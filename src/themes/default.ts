@@ -9,6 +9,11 @@ export enum Color {
 export interface Theme {
   rythmBase: number;
 
+  avatar: {
+    size: number;
+    marginBottom: number;
+  };
+
   container: {
     paddingLeft: number;
     paddingRight: number;
@@ -24,6 +29,11 @@ export interface Theme {
 }
 
 export const theme: Theme = {
+  avatar: {
+    marginBottom: RHYTHM_BASE * 4,
+    size: RHYTHM_BASE * 35
+  },
+
   container: {
     paddingLeft: RHYTHM_BASE * 4,
     paddingRight: RHYTHM_BASE * 4
