@@ -1,32 +1,30 @@
 import { Link } from "gatsby";
 import React from "react";
 import styled from "../../helpers/styled-components";
+import { Container } from "../Container/Container";
 
 export interface Props {
-  siteTitle: string;
+  title: string;
 }
 
 const StyledHeader = styled.div`
   background: ${props => props.theme.header.backgroundColor};
   margin-bottom: 1.45rem;
-`;
-
-const HeaderInner = styled.div`
-  margin: 0 auto;
-  max-width: 960px;
-  padding: 1.45rem 1.0875rem;
-  font-size: 2rem;
+  text-align: center;
+  padding-top: ${props => props.theme.header.paddingTop}px;
+  padding-bottom: ${props => props.theme.header.paddingBottom}px;
 `;
 
 const HeaderTitle = styled(Link)`
-  color: white;
+  color: ${props => props.theme.header.color};
+  font-size: ${props => props.theme.header.fontSize}px;
   text-decoration: none;
 `;
 
-export const Header: React.SFC<Props> = ({ siteTitle }) => (
+export const Header: React.SFC<Props> = ({ title }) => (
   <StyledHeader>
-    <HeaderInner>
-      <HeaderTitle to="/">{siteTitle}</HeaderTitle>
-    </HeaderInner>
+    <Container>
+      <HeaderTitle to="/">{title}</HeaderTitle>
+    </Container>
   </StyledHeader>
 );
