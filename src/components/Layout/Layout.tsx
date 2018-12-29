@@ -1,9 +1,9 @@
-import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
+import { graphql, StaticQuery } from "gatsby";
+import React from "react";
 
-import { Header } from '../Header/Header';
+import { Header } from "../Header/Header";
 
-import './layout.css'
+import "./layout.css";
 
 export interface Props {
   children: React.ReactNode;
@@ -28,7 +28,7 @@ export const Layout: React.SFC<Props> = ({ children }) => (
             margin: `0 auto`,
             maxWidth: 960,
             padding: `0px 1.0875rem 1.45rem`,
-            paddingTop: 0,
+            paddingTop: 0
           }}
         >
           {children}
@@ -36,4 +36,4 @@ export const Layout: React.SFC<Props> = ({ children }) => (
       </>
     )}
   />
-)
+);

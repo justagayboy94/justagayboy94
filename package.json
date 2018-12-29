@@ -5,32 +5,50 @@
   "version": "0.1.0",
   "author": "justagayboy94 <mail@justagayboy94.com>",
   "dependencies": {
+    "@storybook/react": "^4.1.4",
+    "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.0.76",
     "gatsby-image": "^2.0.20",
     "gatsby-plugin-manifest": "^2.0.9",
     "gatsby-plugin-offline": "^2.0.16",
     "gatsby-plugin-react-helmet": "^3.0.2",
     "gatsby-plugin-sharp": "^2.0.14",
+    "gatsby-plugin-styled-components": "^3.0.4",
     "gatsby-plugin-typescript": "^2.0.3",
     "gatsby-source-filesystem": "^2.0.8",
     "gatsby-source-twitter": "^1.3.4",
     "gatsby-transformer-sharp": "^2.1.8",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "styled-components": "^4.1.3"
   },
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "tsc --noEmit && gatsby build",
     "develop": "gatsby develop",
     "start": "yarn develop",
-    "format": "prettier --write \"src/**/*.js\"",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "lint": "tslint -p tsconfig.json",
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@storybook/addon-actions": "^4.1.4",
+    "@storybook/addon-info": "^4.1.4",
+    "@storybook/addon-links": "^4.1.4",
+    "@storybook/addons": "^4.1.4",
     "@types/react": "^16.7.18",
     "@types/react-helmet": "^5.0.7",
-    "prettier": "^1.15.2"
+    "@types/storybook__react": "^4.0.0",
+    "@types/styled-components": "^4.1.4",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.4",
+    "prettier": "^1.15.2",
+    "tslint": "^5.12.0",
+    "tslint-config-prettier": "^1.17.0",
+    "typescript": "^3.2.2"
   },
   "repository": {
     "type": "git",

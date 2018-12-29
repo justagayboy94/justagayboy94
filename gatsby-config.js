@@ -28,7 +28,13 @@ module.exports = {
         display: `minimal-ui`,
       },
     },
-    'gatsby-plugin-typescript',
+    {
+      resolve: 'gatsby-plugin-typescript',
+      options: {
+        isTSX: true,
+        allExtensions: true,
+      }
+    },
     {
       resolve: `gatsby-source-twitter`,
       options: {
@@ -41,6 +47,7 @@ module.exports = {
             bearer_token: process.env.TWITTER_API_CONSUMER_TOKEN
           }
       }
-    }
+    },
+    'gatsby-plugin-styled-components'
   ],
 }

@@ -1,6 +1,6 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
+import { graphql, StaticQuery } from "gatsby";
+import React from "react";
+import Helmet from "react-helmet";
 
 export interface Meta {
   name: string;
@@ -15,73 +15,78 @@ export interface Props {
   title: string;
 }
 
-export const SEO: React.SFC<Props> = ({ description, lang, meta, keywords, title }) => (
+export const SEO: React.SFC<Props> = ({
+  description,
+  lang,
+  meta,
+  keywords,
+  title
+}) => (
   <StaticQuery
     query={detailsQuery}
     render={data => {
-      const metaDescription =
-        description || data.site.siteMetadata.description
+      const metaDescription = description || data.site.siteMetadata.description;
       return (
         <Helmet
           htmlAttributes={{
-            lang,
+            lang
           }}
           title={title}
           titleTemplate={`%s | ${data.site.siteMetadata.title}`}
           meta={[
             {
-              name: `description`,
               content: metaDescription,
+              name: `description`
             },
             {
-              property: `og:title`,
               content: title,
+              property: `og:title`
             },
             {
-              property: `og:description`,
               content: metaDescription,
+              property: `og:description`
             },
             {
-              property: `og:type`,
               content: `website`,
+              property: `og:type`
             },
             {
-              name: `twitter:card`,
               content: `summary`,
+              name: `twitter:card`
             },
             {
-              name: `twitter:creator`,
               content: data.site.siteMetadata.author,
+              name: `twitter:creator`
             },
             {
-              name: `twitter:title`,
               content: title,
+              name: `twitter:title`
             },
             {
-              name: `twitter:description`,
               content: metaDescription,
-            },
+              name: `twitter:description`
+            }
           ]
             .concat(
-              keywords.length > 0
+              (keywords || []).length > 0
                 ? {
-                    name: `keywords`,
-                    content: keywords.join(`, `),
+                    content: (keywords || []).join(`, `),
+                    name: `keywords`
                   }
                 : []
             )
-            .concat(meta)}
+            .concat(meta || [])}
         />
-      )
+      );
     }}
   />
-)
+);
 
 SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
   keywords: [],
-}
+  lang: `en`,
+  meta: []
+};
 
 export default SEO;
 
@@ -95,4 +100,4 @@ const detailsQuery = graphql`
       }
     }
   }
-`
+`;
