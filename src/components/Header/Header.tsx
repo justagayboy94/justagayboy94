@@ -1,39 +1,37 @@
 import { Link } from "gatsby";
 import React from "react";
 import styled from "../../helpers/styled-components";
-import { Container } from "../Container/Container";
 
 export interface Props {
-  avatar: React.ReactNode;
   title: string;
 }
 
 const StyledHeader = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: ${props => props.theme.header.marginBottom}px;
+`;
+
+const HeaderContainer = styled.div`
   background: ${props => props.theme.header.backgroundColor};
-  margin-bottom: 1.45rem;
-  padding-top: ${props => props.theme.header.paddingTop}px;
-  padding-bottom: ${props => props.theme.header.paddingBottom}px;
+  padding: ${props => props.theme.header.padding}px;
+  margin: 0 auto;
 `;
 
 const WebsiteTitle = styled(Link)`
   color: ${props => props.theme.header.color};
   font-size: ${props => props.theme.header.fontSize}px;
   text-decoration: none;
-  font-family: Kalam;
+  font-family: ${props => props.theme.header.fontFamily};
   display: inline-block;
+  text-transform: uppercase;
 `;
 
-const HeaderContainer = styled(Container)`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const Header: React.SFC<Props> = ({ avatar, title }) => (
+export const Header: React.SFC<Props> = ({ title }) => (
   <StyledHeader>
     <HeaderContainer>
-      {avatar}
       <WebsiteTitle to="/">{title}</WebsiteTitle>
     </HeaderContainer>
   </StyledHeader>

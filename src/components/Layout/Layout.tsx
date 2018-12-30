@@ -1,9 +1,7 @@
 import { graphql, StaticQuery } from "gatsby";
 import React from "react";
 import { ThemeProvider } from "../../helpers/styled-components";
-import avatar from "../../images/avatar.jpg";
 import { theme } from "../../themes/default";
-import { Avatar } from "../Avatar/Avatar";
 import { Header } from "../Header/Header";
 
 import "./layout.css";
@@ -19,17 +17,14 @@ export const Layout: React.SFC<Props> = ({ children }) => (
         query SiteTitleQuery {
           site {
             siteMetadata {
-              title
+              initials
             }
           }
         }
       `}
       render={data => (
         <>
-          <Header
-            title={data.site.siteMetadata.title}
-            avatar={<Avatar src={avatar} />}
-          />
+          <Header title={data.site.siteMetadata.initials} />
           <div
             style={{
               margin: `0 auto`,

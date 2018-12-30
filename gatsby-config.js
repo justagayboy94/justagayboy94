@@ -2,7 +2,8 @@ require("dotenv").config();
 
 module.exports = {
   siteMetadata: {
-    title: `justagayboy94`,
+    title: "justagayboy94",
+    initials: "jgb94",
     description: `Personal blog of justagayboy94`,
     author: `@justagayboy94`
   },
@@ -49,14 +50,6 @@ module.exports = {
       }
     },
     "gatsby-plugin-styled-components",
-    {
-      resolve: "gatsby-plugin-web-font-loader",
-      options: {
-        google: {
-          families: ["Kalam"]
-        }
-      }
-    },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
