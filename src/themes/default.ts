@@ -8,6 +8,10 @@ export enum Color {
 }
 
 export interface Theme {
+  breakpoints: {
+    m: string;
+  };
+
   rythmBase: number;
 
   container: {
@@ -23,9 +27,20 @@ export interface Theme {
     padding: number;
     marginBottom: number;
   };
+
+  heroImage: {
+    borderSize: number;
+    marginBottom: number;
+    borderColor: Color;
+    padding: number;
+  };
 }
 
 export const theme: Theme = {
+  breakpoints: {
+    m: "min-width: 768px"
+  },
+
   container: {
     paddingLeft: RHYTHM_BASE * 4,
     paddingRight: RHYTHM_BASE * 4
@@ -38,6 +53,13 @@ export const theme: Theme = {
     fontSize: RHYTHM_BASE * 7,
     marginBottom: RHYTHM_BASE * 8,
     padding: RHYTHM_BASE * 5
+  },
+
+  heroImage: {
+    borderColor: Color.Black,
+    borderSize: RHYTHM_BASE,
+    marginBottom: RHYTHM_BASE * 10,
+    padding: RHYTHM_BASE * 2
   },
 
   rythmBase: RHYTHM_BASE
