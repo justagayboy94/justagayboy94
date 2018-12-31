@@ -16,17 +16,18 @@ const StyledHeroImage = styled(Container)`
 const ImageBorder = styled.div`
   position: relative;
 
-  &:before {
+  &:before,
+  &:after {
     content: "";
     width: ${props => props.theme.heroImage.borderSize}px;
-    height: 120px;
+    height: ${props => props.theme.rythmBase * 25}px;
     background-color: ${props => props.theme.heroImage.borderColor};
     display: block;
     margin-bottom: ${props => props.theme.heroImage.padding}px;
     margin-left: calc(50% - 2px);
 
     @media (${props => props.theme.breakpoints.m}) {
-      height: 200px;
+      height: ${props => props.theme.rythmBase * 50}px;
     }
   }
 `;

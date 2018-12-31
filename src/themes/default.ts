@@ -51,7 +51,7 @@ export const theme: Theme = {
     color: Color.White,
     fontFamily: "Black Ops One",
     fontSize: RHYTHM_BASE * 7,
-    marginBottom: RHYTHM_BASE * 8,
+    marginBottom: RHYTHM_BASE * 2,
     padding: RHYTHM_BASE * 5
   },
 
