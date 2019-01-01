@@ -1,20 +1,19 @@
 import React from "react";
-import { HeroImage } from "../components/HeroImage/HeroImage";
-import { Layout } from "../components/Layout/Layout";
+import { Container } from "../components/Container/Container";
 import { SEO } from "../components/SEO/SEO";
 import { TwitterGallery } from "../components/TwitterGallery/TwitterGallery";
-
-import avatar from "../images/avatar.jpg";
+import { LayoutWithHeroImageContainer } from "../containers/LayoutContainer/LayoutWithHeroImageContainer";
 
 const IndexPage = () => (
-  <Layout>
+  <LayoutWithHeroImageContainer>
     <SEO
       title="Home"
       keywords={[`justagayboy94`, `slave`, `twink`, `gay`, `bdsm`]}
     />
-    <HeroImage image={avatar} />
-    <TwitterGallery />
-  </Layout>
+    <Container>
+      <TwitterGallery />
+    </Container>
+  </LayoutWithHeroImageContainer>
 );
 
 export default IndexPage;

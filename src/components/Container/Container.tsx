@@ -5,4 +5,5 @@ export const Container = styled.div`
   max-width: 960px;
   padding-left: ${props => props.theme.container.paddingLeft}px;
   padding-right: ${props => props.theme.container.paddingRight}px;
+  box-sizing: border-box;
 `;
