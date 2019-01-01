@@ -1,6 +1,6 @@
 import React from "react";
 import { SEO } from "../components/SEO/SEO";
-import { TwitterGallery } from "../components/TwitterGallery/TwitterGallery";
+import { ImageGalleryContainer } from "../containers/ImageGalleryContainer/ImageGalleryContainer";
 import { LayoutWithHeroImageContainer } from "../containers/LayoutContainer/LayoutWithHeroImageContainer";
 
 const IndexPage = () => (
@@ -9,7 +9,7 @@ const IndexPage = () => (
       title="Home"
       keywords={[`justagayboy94`, `slave`, `twink`, `gay`, `bdsm`]}
     />
-    <TwitterGallery />
+    <ImageGalleryContainer />
   </LayoutWithHeroImageContainer>
 );
 
