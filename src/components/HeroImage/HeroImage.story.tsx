@@ -3,5 +3,7 @@ import React from "react";
 import { HeroImage } from "./HeroImage";
 
 storiesOf("Components/HeroImage", module).add("default", () => (
-  <HeroImage image="1000.jpeg" />
+  <div style={{ width: "100vw", height: "100vh" }}>
+    <HeroImage image="1000.jpeg" />
+  </div>
 ));

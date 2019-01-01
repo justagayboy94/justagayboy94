@@ -7,16 +7,16 @@ export interface Props {
 }
 
 const StyledHeader = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin-bottom: ${props => props.theme.header.marginBottom}px;
 `;
 
 const HeaderContainer = styled.div`
+  width: ${props => props.theme.header.width}px;
+  height: ${props => props.theme.header.height}px;
   background: ${props => props.theme.header.backgroundColor};
-  padding: ${props => props.theme.header.padding}px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
 `;
 
@@ -25,7 +25,6 @@ const WebsiteTitle = styled(Link)`
   font-size: ${props => props.theme.header.fontSize}px;
   text-decoration: none;
   font-family: ${props => props.theme.header.fontFamily};
-  display: inline-block;
   text-transform: uppercase;
 `;
 

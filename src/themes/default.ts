@@ -26,13 +26,20 @@ export interface Theme {
     fontFamily: string;
     padding: number;
     marginBottom: number;
+    width: number;
+    height: number;
   };
 
   heroImage: {
+    backgroundColor: Color;
     borderSize: number;
     marginBottom: number;
     borderColor: Color;
     padding: number;
+  };
+
+  layoutWithHeroImage: {
+    headerHeight: number;
   };
 }
 
@@ -51,15 +58,22 @@ export const theme: Theme = {
     color: Color.White,
     fontFamily: "Black Ops One",
     fontSize: RHYTHM_BASE * 7,
+    height: RHYTHM_BASE * 17,
     marginBottom: RHYTHM_BASE * 2,
-    padding: RHYTHM_BASE * 5
+    padding: RHYTHM_BASE * 5,
+    width: RHYTHM_BASE * 35
   },
 
   heroImage: {
+    backgroundColor: Color.White,
     borderColor: Color.Black,
     borderSize: RHYTHM_BASE,
     marginBottom: RHYTHM_BASE * 10,
     padding: RHYTHM_BASE * 2
+  },
+
+  layoutWithHeroImage: {
+    headerHeight: RHYTHM_BASE * 17
   },
 
   rythmBase: RHYTHM_BASE
