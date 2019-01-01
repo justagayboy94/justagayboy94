@@ -29,7 +29,7 @@ export const TwitterGallery: React.SFC = () => (
                 return null;
               }
 
-              return <img src={media.media_url} />;
+              return <img key={media.media_url} src={media.media_url} />;
             })}
           </React.Fragment>
         ))}

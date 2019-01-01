@@ -12,11 +12,25 @@ export interface Props {
   children: React.ReactNode;
 }
 
+const HeroUnit = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+`;
+
 const HeroImageWrapper = styled.div`
-  width: 100vw;
+  width: 100%;
   height: calc(
-    100vh - ${props => props.theme.layoutWithHeroImage.headerHeight}px
+    100% - ${props => props.theme.layoutWithHeroImage.headerHeight}px
   );
+`;
+
+const Children = styled.div`
+  position: absolute;
+  width: 100%;
+  top: 100%;
 `;
 
 export const LayoutWithHeroImage: React.SFC<Props> = ({
@@ -25,10 +39,14 @@ export const LayoutWithHeroImage: React.SFC<Props> = ({
   title
 }) => (
   <>
-    <Header title={title} />
-    <HeroImageWrapper>
-      <HeroImage image={heroImage} />
-    </HeroImageWrapper>
-    <Container>{children}</Container>
+    <HeroUnit>
+      <Header title={title} />
+      <HeroImageWrapper>
+        <HeroImage image={heroImage} />
+      </HeroImageWrapper>
+    </HeroUnit>
+    <Children>
+      <Container>{children}</Container>
+    </Children>
   </>
 );

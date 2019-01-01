@@ -27,7 +27,7 @@ const StyledHeroImage = styled.div`
 
 const Image = styled.img`
   width: 100%;
-  max-width: 40vw;
+  max-width: 60%;
   filter: grayscale(100%);
   border: ${props => props.theme.heroImage.borderSize}px solid
     ${props => props.theme.heroImage.borderColor};
@@ -38,7 +38,8 @@ const Image = styled.img`
     ${props => props.theme.heroImage.backgroundColor};
 
   @media (${props => props.theme.breakpoints.m}) {
-    max-width: 20vw;
+    width: 300px;
+    max-width: unset;
   }
 `;
 
