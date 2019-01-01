@@ -1,4 +1,5 @@
 import React from "react";
+import { Container } from "../Container/Container";
 import { Header } from "../Header/Header";
 
 import "./layout.css";
@@ -11,6 +12,6 @@ export interface Props {
 export const Layout: React.SFC<Props> = ({ children, title }) => (
   <>
     <Header title={title} />
-    {children}
+    <Container>{children}</Container>
   </>
 );

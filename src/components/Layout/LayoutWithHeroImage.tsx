@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "../../helpers/styled-components";
+import { Container } from "../Container/Container";
 import { Header } from "../Header/Header";
 import { HeroImage } from "../HeroImage/HeroImage";
 
@@ -28,6 +29,6 @@ export const LayoutWithHeroImage: React.SFC<Props> = ({
     <HeroImageWrapper>
       <HeroImage image={heroImage} />
     </HeroImageWrapper>
-    {children}
+    <Container>{children}</Container>
   </>
 );

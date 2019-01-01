@@ -16,7 +16,7 @@ export const LayoutWithHeroImageContainer: React.SFC<Props> = ({
   <ThemeProvider theme={theme}>
     <StaticQuery
       query={graphql`
-        query SiteTitleQuery {
+        query LayoutWithHeroImageContainer {
           site {
             siteMetadata {
               initials

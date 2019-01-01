@@ -10,9 +10,7 @@ const IndexPage = () => (
       title="Home"
       keywords={[`justagayboy94`, `slave`, `twink`, `gay`, `bdsm`]}
     />
-    <Container>
-      <TwitterGallery />
-    </Container>
+    <TwitterGallery />
   </LayoutWithHeroImageContainer>
 );
 

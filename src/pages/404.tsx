@@ -1,5 +1,6 @@
 import React from "react";
 
+import { Container } from "../components/Container/Container";
 import { SEO } from "../components/SEO/SEO";
 import { LayoutContainer } from "../containers/LayoutContainer/LayoutContainer";
 
