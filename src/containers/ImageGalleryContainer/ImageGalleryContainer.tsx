@@ -16,6 +16,12 @@ interface Edge {
 }
 
 interface QueryResponse {
+  site: {
+    siteMetadata: {
+      twitterUrl: string;
+    };
+  };
+
   allTweet: {
     edges: Edge[];
   };
@@ -26,7 +32,14 @@ export class ImageGalleryContainer extends React.Component {
     return (
       <StaticQuery query={tweetsQuery}>
         {(data: QueryResponse) => (
-          <ImageGallery images={this.filterImages(data.allTweet.edges)} />
+          <ImageGallery
+            moreButton={{
+              href: data.site.siteMetadata.twitterUrl,
+              label: "More on Twitter"
+            }}
+            title="Latest pics"
+            images={this.filterImages(data.allTweet.edges)}
+          />
         )}
       </StaticQuery>
     );
@@ -49,6 +62,11 @@ export class ImageGalleryContainer extends React.Component {
 
 const tweetsQuery = graphql`
   query TwitterGallery {
+    site {
+      siteMetadata {
+        twitterUrl
+      }
+    }
     allTweet {
       edges {
         node {
