@@ -2,9 +2,15 @@ import React from "react";
 import styled from "../../helpers/styled-components";
 import { Headline } from "../Headline/Headline";
 
+export interface Image {
+  src: string;
+  url: string;
+  alt: string;
+}
+
 export interface Props {
   title: string;
-  images: string[];
+  images: Image[];
   moreButton: {
     href: string;
     label: string;
@@ -23,15 +29,22 @@ const Gallery = styled.div`
   margin-bottom: 20px;
 `;
 
-const Image = styled.div<{ src: string }>`
-  width: 300px;
-  height: 300px;
-  background-size: cover;
-  background-position: center;
-  background-image: url(${props => props.src});
+const Link = styled.a`
+  width: 100%;
   border: 4px solid white;
   flex-grow: 1;
+
+  @media (${props => props.theme.breakpoints.m}) {
+    width: 200px;
+    height: 400px;
+  }
+`;
+
+const Image = styled.img`
+  width: 100%;
+  height: 100%;
   filter: grayscale(100%);
+  object-fit: cover;
 `;
 
 const LinkButton = styled.a`
@@ -53,7 +66,9 @@ export const ImageGallery: React.SFC<Props> = ({
     <Headline>{title}</Headline>
     <Gallery>
       {images.map(image => (
-        <Image key={image} src={image} />
+        <Link key={image.src} href={image.url} target="_blank">
+          <Image src={image.src} alt={image.alt} title={image.alt} />
+        </Link>
       ))}
     </Gallery>
     <LinkButton href={moreButton.href} target="_blank">

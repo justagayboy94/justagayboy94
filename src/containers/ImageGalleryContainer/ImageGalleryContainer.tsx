@@ -1,14 +1,19 @@
 import { graphql, StaticQuery } from "gatsby";
 import React from "react";
-import { ImageGallery } from "../../components/ImageGallery/ImageGallery";
+import {
+  Image,
+  ImageGallery
+} from "../../components/ImageGallery/ImageGallery";
 
 interface Edge {
   node: {
     id: string;
+    full_text: string;
     entities: {
       media: Array<{
         id: string;
         type: string;
+        url: string;
         media_url_https: string;
       }>;
     };
@@ -46,12 +51,16 @@ export class ImageGalleryContainer extends React.Component {
   }
 
   private filterImages(edges: Edge[]) {
-    const images: string[] = [];
+    const images: Image[] = [];
 
     edges.forEach(edge => {
       edge.node.entities.media.forEach(media => {
         if (media.type === "photo") {
-          images.push(media.media_url_https);
+          images.push({
+            alt: edge.node.full_text,
+            src: media.media_url_https,
+            url: media.url
+          });
         }
       });
     });
@@ -71,10 +80,12 @@ const tweetsQuery = graphql`
       edges {
         node {
           id
+          full_text
           entities {
             media {
               id
               type
+              url
               media_url_https
             }
           }
