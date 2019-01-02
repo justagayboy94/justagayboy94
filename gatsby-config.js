@@ -56,6 +56,13 @@ module.exports = {
       options: {
         trackingId: "UA-131430514-1"
       }
+    },
+    {
+      resolve: `gatsby-source-ical`,
+      options: {
+        name: `events`,
+        url: process.env.GOOGLE_CALENDAR_ICAL_URL
+      }
     }
   ]
 };
