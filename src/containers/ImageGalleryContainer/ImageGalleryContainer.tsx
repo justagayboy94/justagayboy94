@@ -9,7 +9,7 @@ interface Edge {
       media: Array<{
         id: string;
         type: string;
-        media_url: string;
+        media_url_https: string;
       }>;
     };
   };
@@ -51,7 +51,7 @@ export class ImageGalleryContainer extends React.Component {
     edges.forEach(edge => {
       edge.node.entities.media.forEach(media => {
         if (media.type === "photo") {
-          images.push(media.media_url);
+          images.push(media.media_url_https);
         }
       });
     });
@@ -75,7 +75,7 @@ const tweetsQuery = graphql`
             media {
               id
               type
-              media_url
+              media_url_https
             }
           }
         }
