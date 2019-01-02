@@ -11,10 +11,7 @@ export interface Image {
 export interface Props {
   title: string;
   images: Image[];
-  moreButton: {
-    href: string;
-    label: string;
-  };
+  moreButton: React.ReactNode;
 }
 
 const StyledImageGallery = styled.div`
@@ -26,7 +23,7 @@ const Gallery = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 `;
 
 const Link = styled.a`
@@ -47,16 +44,6 @@ const Image = styled.img`
   object-fit: cover;
 `;
 
-const LinkButton = styled.a`
-  margin: 0 auto;
-  border: 2px solid black;
-  background-color: transparent;
-  padding: 8px 12px;
-  cursor: pointer;
-  text-decoration: none;
-  color: black;
-`;
-
 export const ImageGallery: React.SFC<Props> = ({
   title,
   images,
@@ -71,8 +58,6 @@ export const ImageGallery: React.SFC<Props> = ({
         </Link>
       ))}
     </Gallery>
-    <LinkButton href={moreButton.href} target="_blank">
-      {moreButton.label}
-    </LinkButton>
+    {moreButton}
   </StyledImageGallery>
 );

@@ -1,5 +1,6 @@
 import { storiesOf } from "@storybook/react";
 import React from "react";
+import { LinkButton } from "../LinkButton/LinkButton";
 import { ImageGallery } from "./ImageGallery";
 
 const image1 = {
@@ -36,7 +37,11 @@ const images = [image1, image2, image3, image4, image5];
 
 storiesOf("Components/ImageGallery", module).add("default", () => (
   <ImageGallery
-    moreButton={{ href: "http://example.com", label: "More on Twitter" }}
+    moreButton={
+      <LinkButton href="http://example.com" target="_blank">
+        More on Twitter
+      </LinkButton>
+    }
     title="latest pics"
     images={images}
   />

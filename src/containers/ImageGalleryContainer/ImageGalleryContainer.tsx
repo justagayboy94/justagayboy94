@@ -4,6 +4,7 @@ import {
   Image,
   ImageGallery
 } from "../../components/ImageGallery/ImageGallery";
+import { LinkButton } from "../../components/LinkButton/LinkButton";
 
 interface Edge {
   node: {
@@ -38,10 +39,14 @@ export class ImageGalleryContainer extends React.Component {
       <StaticQuery query={tweetsQuery}>
         {(data: QueryResponse) => (
           <ImageGallery
-            moreButton={{
-              href: data.site.siteMetadata.twitterUrl,
-              label: "More on Twitter"
-            }}
+            moreButton={
+              <LinkButton
+                href={data.site.siteMetadata.twitterUrl}
+                target="_blank"
+              >
+                More on Twitter
+              </LinkButton>
+            }
             title="Latest pics"
             images={this.filterImages(data.allTweet.edges)}
           />

@@ -3,7 +3,7 @@ const RHYTHM_BASE = 4;
 const HEADLINE_FONT_FAMILY = "Black Ops One";
 
 export enum Color {
-  Primary = "#FAEDA2",
+  Primary = "yellow",
   MainFontColor = "#3B3B3B",
   White = "white",
   Black = "black"
@@ -46,6 +46,16 @@ export interface Theme {
     marginBottom: number;
     borderColor: Color;
     padding: number;
+  };
+
+  linkButton: {
+    borderColor: Color;
+    color: Color;
+    paddingLeftRight: number;
+    paddingTopBottom: number;
+    boxShadowOffset: number;
+    boxShadowColor: Color;
+    marginBottom: number;
   };
 
   layoutWithHeroImage: {
@@ -92,6 +102,16 @@ export const theme: Theme = {
 
   layoutWithHeroImage: {
     headerHeight: RHYTHM_BASE * 17
+  },
+
+  linkButton: {
+    borderColor: Color.Black,
+    boxShadowColor: Color.Primary,
+    boxShadowOffset: RHYTHM_BASE * 2,
+    color: Color.Black,
+    marginBottom: RHYTHM_BASE * 4,
+    paddingLeftRight: RHYTHM_BASE * 3,
+    paddingTopBottom: RHYTHM_BASE * 2
   },
 
   rythmBase: RHYTHM_BASE
