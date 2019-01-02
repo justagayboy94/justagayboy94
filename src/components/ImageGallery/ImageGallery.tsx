@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "../../helpers/styled-components";
+import { Headline } from "../Headline/Headline";
 
 export interface Props {
   title: string;
@@ -13,13 +14,6 @@ export interface Props {
 const StyledImageGallery = styled.div`
   text-align: center;
   margin-bottom: 20px;
-`;
-
-const Headline = styled.h1`
-  font-family: "Black Ops One";
-  margin-top: 20px;
-  margin-bottom: 20px;
-  text-transform: lowercase;
 `;
 
 const Gallery = styled.div`

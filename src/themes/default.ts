@@ -1,5 +1,7 @@
 const RHYTHM_BASE = 4;
 
+const HEADLINE_FONT_FAMILY = "Black Ops One";
+
 export enum Color {
   Primary = "#FAEDA2",
   MainFontColor = "#3B3B3B",
@@ -30,6 +32,14 @@ export interface Theme {
     height: number;
   };
 
+  headline: {
+    fontFamily: string;
+    borderWidth: number;
+    borderHeight: number;
+    borderColor: Color;
+    borderMargin: number;
+  };
+
   heroImage: {
     backgroundColor: Color;
     borderSize: number;
@@ -56,12 +66,20 @@ export const theme: Theme = {
   header: {
     backgroundColor: Color.Black,
     color: Color.White,
-    fontFamily: "Black Ops One",
+    fontFamily: HEADLINE_FONT_FAMILY,
     fontSize: RHYTHM_BASE * 7,
     height: RHYTHM_BASE * 17,
     marginBottom: RHYTHM_BASE * 2,
     padding: RHYTHM_BASE * 5,
     width: RHYTHM_BASE * 35
+  },
+
+  headline: {
+    borderColor: Color.Black,
+    borderHeight: RHYTHM_BASE * 17,
+    borderMargin: RHYTHM_BASE * 2,
+    borderWidth: RHYTHM_BASE,
+    fontFamily: HEADLINE_FONT_FAMILY
   },
 
   heroImage: {
