@@ -14,7 +14,7 @@ export const BoyfriendFollowButtonContainer = () => (
   <StaticQuery query={query}>
     {(data: QueryResponse) => (
       <LinkButton href={data.site.siteMetadata.bfTwitterUrl} target="_blank">
-        Follow his journey on Twitter
+        Follow him on Twitter
       </LinkButton>
     )}
   </StaticQuery>
