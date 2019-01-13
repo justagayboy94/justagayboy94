@@ -20,6 +20,7 @@ export interface Theme {
   container: {
     paddingLeft: number;
     paddingRight: number;
+    marginBottom: number;
   };
 
   header: {
@@ -89,6 +90,7 @@ export const theme: Theme = {
   },
 
   container: {
+    marginBottom: RHYTHM_BASE * 8,
     paddingLeft: RHYTHM_BASE * 4,
     paddingRight: RHYTHM_BASE * 4
   },
