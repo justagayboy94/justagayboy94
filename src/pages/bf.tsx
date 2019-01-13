@@ -5,7 +5,7 @@ import { BoyfriendFollowButtonContainer } from "../containers/BoyfriendFollowBut
 import { BoyfriendStatsContainer } from "../containers/BoyfriendStatsContainer/BoyfriendStatsContainer";
 import { LayoutContainer } from "../containers/LayoutContainer/LayoutContainer";
 
-const IndexPage = () => (
+const BfPage = () => (
   <LayoutContainer>
     <SEO
       title="Boyfriend"
@@ -17,6 +17,7 @@ const IndexPage = () => (
         `bdsm`,
         `rubberboy92`
       ]}
+      description="The rules are quite simple for 2019: He has to stay locked 24/7 in his beautiful tiny chastity cage. No orgasms, only a few ruined orgasms. That's it!"
     />
     <Headline subheadline="The rules are quite simple for 2019: He has to stay locked 24/7 in his beautiful tiny chastity cage. No orgasms, only a few ruined orgasms. That's it!">
       boyfriend
@@ -26,4 +27,4 @@ const IndexPage = () => (
   </LayoutContainer>
 );
 
-export default IndexPage;
+export default BfPage;

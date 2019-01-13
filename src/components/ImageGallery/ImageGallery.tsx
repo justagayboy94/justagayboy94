@@ -16,7 +16,7 @@ export interface Props {
 
 const StyledImageGallery = styled.div`
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 `;
 
 const Gallery = styled.div`
