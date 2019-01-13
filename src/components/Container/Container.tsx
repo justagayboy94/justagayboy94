@@ -6,4 +6,5 @@ export const Container = styled.div`
   padding-left: ${props => props.theme.container.paddingLeft}px;
   padding-right: ${props => props.theme.container.paddingRight}px;
   box-sizing: border-box;
+  text-align: center;
 `;
