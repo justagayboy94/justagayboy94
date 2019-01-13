@@ -1,7 +1,8 @@
 import React from "react";
 import { Headline } from "../components/Headline/Headline";
 import { SEO } from "../components/SEO/SEO";
-import { BoyfriendFollowButton } from "../containers/BoyfriendFollowButton/BoyfriendFollowButton";
+import { BoyfriendFollowButtonContainer } from "../containers/BoyfriendFollowButtonContainer/BoyfriendFollowButtonContainer";
+import { BoyfriendStatsContainer } from "../containers/BoyfriendStatsContainer/BoyfriendStatsContainer";
 import { LayoutContainer } from "../containers/LayoutContainer/LayoutContainer";
 
 const IndexPage = () => (
@@ -18,7 +19,8 @@ const IndexPage = () => (
       ]}
     />
     <Headline>boyfriend</Headline>
-    <BoyfriendFollowButton />
+    <BoyfriendStatsContainer />
+    <BoyfriendFollowButtonContainer />
   </LayoutContainer>
 );
 

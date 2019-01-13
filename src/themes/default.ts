@@ -61,6 +61,17 @@ export interface Theme {
   layoutWithHeroImage: {
     headerHeight: number;
   };
+
+  stats: {
+    fontFamily: string;
+    fontSize: number;
+    marginTop: number;
+    marginBottom: number;
+
+    dekstop: {
+      marginBottom: number;
+    };
+  };
 }
 
 export const theme: Theme = {
@@ -114,5 +125,16 @@ export const theme: Theme = {
     paddingTopBottom: RHYTHM_BASE * 2
   },
 
-  rythmBase: RHYTHM_BASE
+  rythmBase: RHYTHM_BASE,
+
+  stats: {
+    fontFamily: HEADLINE_FONT_FAMILY,
+    fontSize: RHYTHM_BASE * 16,
+    marginBottom: RHYTHM_BASE * 8,
+    marginTop: RHYTHM_BASE * 4,
+
+    dekstop: {
+      marginBottom: RHYTHM_BASE * 10
+    }
+  }
 };

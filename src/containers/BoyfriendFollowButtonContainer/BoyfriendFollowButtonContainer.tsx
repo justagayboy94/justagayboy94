@@ -10,8 +10,8 @@ interface QueryResponse {
   };
 }
 
-export const BoyfriendFollowButton = () => (
-  <StaticQuery query={tweetsQuery}>
+export const BoyfriendFollowButtonContainer = () => (
+  <StaticQuery query={query}>
     {(data: QueryResponse) => (
       <LinkButton href={data.site.siteMetadata.bfTwitterUrl} target="_blank">
         Follow his journey on Twitter
@@ -20,7 +20,7 @@ export const BoyfriendFollowButton = () => (
   </StaticQuery>
 );
 
-const tweetsQuery = graphql`
+const query = graphql`
   query BoyfriendFollowButton {
     site {
       siteMetadata {
