@@ -26,6 +26,7 @@
   },
   "license": "MIT",
   "scripts": {
+    "postinstall": "cd plugins/gatsby-source-twitter-timeline && yarn",
     "build": "tsc --noEmit && gatsby build",
     "develop": "gatsby develop",
     "start": "yarn develop",
