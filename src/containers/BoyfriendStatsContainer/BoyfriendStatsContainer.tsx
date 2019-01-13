@@ -31,15 +31,15 @@ export class BoyfriendStatsContainer extends React.Component {
     let ruinedOrgasms = 0;
 
     edges.forEach(edge => {
-      if (edge.node.summary.indexOf("🔐") > -1) {
+      if (edge.node.summary === "🔐") {
         daysLocked++;
       }
 
-      if (edge.node.summary.indexOf("🔓") > -1) {
+      if (edge.node.summary === "🔓") {
         daysUnlocked++;
       }
 
-      if (edge.node.summary.indexOf("🔐💦") > -1) {
+      if (edge.node.summary === "🔐💦") {
         ruinedOrgasms++;
       }
     });
