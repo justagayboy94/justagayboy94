@@ -1,0 +1,6 @@
+{
+  "name": "gatsby-source-twitter-timeline",
+  "dependencies": {
+    "twitter": "^1.7.1"
+  }
+}

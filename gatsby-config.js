@@ -38,15 +38,16 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-source-twitter`,
+      resolve: "gatsby-source-twitter-timeline",
       options: {
-        q: "#justagayboy94 from:justagayboy94 filter:images",
-        tweet_mode: "extended",
-        fetchAllResults: true,
+        request_options: {
+          screen_name: "justagayboy94"
+        },
         credentials: {
           consumer_key: process.env.TWITTER_API_CONSUMER_KEY,
           consumer_secret: process.env.TWITTER_API_CONSUMER_SECRET,
-          bearer_token: process.env.TWITTER_API_CONSUMER_TOKEN
+          access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
+          access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
         }
       }
     },
