@@ -1,6 +1,7 @@
 const RHYTHM_BASE = 4;
 
 const HEADLINE_FONT_FAMILY = "Black Ops One";
+const TEXT_FONT_FAMILY = "georgia";
 
 export enum Color {
   Primary = "yellow",
@@ -38,6 +39,14 @@ export interface Theme {
     borderHeight: number;
     borderColor: Color;
     borderMargin: number;
+
+    subHeadline: {
+      fontFamily: string;
+      fontSize: number;
+      lineHeight: number;
+      marginTop: number;
+      marginBottom: number;
+    };
   };
 
   heroImage: {
@@ -60,6 +69,17 @@ export interface Theme {
 
   layoutWithHeroImage: {
     headerHeight: number;
+  };
+
+  stats: {
+    fontFamily: string;
+    fontSize: number;
+    marginTop: number;
+    marginBottom: number;
+
+    dekstop: {
+      marginBottom: number;
+    };
   };
 }
 
@@ -89,7 +109,15 @@ export const theme: Theme = {
     borderHeight: RHYTHM_BASE * 17,
     borderMargin: RHYTHM_BASE * 2,
     borderWidth: RHYTHM_BASE,
-    fontFamily: HEADLINE_FONT_FAMILY
+    fontFamily: HEADLINE_FONT_FAMILY,
+
+    subHeadline: {
+      fontFamily: TEXT_FONT_FAMILY,
+      fontSize: RHYTHM_BASE * 4,
+      lineHeight: RHYTHM_BASE * 5,
+      marginBottom: RHYTHM_BASE,
+      marginTop: RHYTHM_BASE * 2
+    }
   },
 
   heroImage: {
@@ -114,5 +142,16 @@ export const theme: Theme = {
     paddingTopBottom: RHYTHM_BASE * 2
   },
 
-  rythmBase: RHYTHM_BASE
+  rythmBase: RHYTHM_BASE,
+
+  stats: {
+    fontFamily: HEADLINE_FONT_FAMILY,
+    fontSize: RHYTHM_BASE * 16,
+    marginBottom: RHYTHM_BASE * 8,
+    marginTop: RHYTHM_BASE * 4,
+
+    dekstop: {
+      marginBottom: RHYTHM_BASE * 10
+    }
+  }
 };

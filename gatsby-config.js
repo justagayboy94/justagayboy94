@@ -2,6 +2,7 @@ require("dotenv").config();
 
 module.exports = {
   siteMetadata: {
+    bfTwitterUrl: "https://twitter.com/rubberboy921",
     title: "justagayboy94",
     initials: "jgb94",
     description: `Personal blog of justagayboy94`,
