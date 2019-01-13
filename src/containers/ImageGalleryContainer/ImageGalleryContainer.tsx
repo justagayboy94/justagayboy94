@@ -8,12 +8,9 @@ import { LinkButton } from "../../components/LinkButton/LinkButton";
 
 interface Edge {
   node: {
-    id: string;
     full_text: string;
-    entities: {
+    extended_entities: {
       media: Array<{
-        id: string;
-        type: string;
         url: string;
         media_url_https: string;
       }>;
@@ -28,7 +25,7 @@ interface QueryResponse {
     };
   };
 
-  allTweet: {
+  allTwitterTimelineTweet: {
     edges: Edge[];
   };
 }
@@ -48,7 +45,7 @@ export class ImageGalleryContainer extends React.Component {
               </LinkButton>
             }
             title="Latest pics"
-            images={this.filterImages(data.allTweet.edges)}
+            images={this.filterImages(data.allTwitterTimelineTweet.edges)}
           />
         )}
       </StaticQuery>
@@ -59,14 +56,12 @@ export class ImageGalleryContainer extends React.Component {
     const images: Image[] = [];
 
     edges.forEach(edge => {
-      edge.node.entities.media.forEach(media => {
-        if (media.type === "photo") {
-          images.push({
-            alt: edge.node.full_text,
-            src: media.media_url_https,
-            url: media.url
-          });
-        }
+      edge.node.extended_entities.media.forEach(media => {
+        images.push({
+          alt: edge.node.full_text,
+          src: media.media_url_https,
+          url: media.url
+        });
       });
     });
 
@@ -81,17 +76,20 @@ const tweetsQuery = graphql`
         twitterUrl
       }
     }
-    allTweet {
+    allTwitterTimelineTweet(
+      limit: 10
+      filter: {
+        retweeted: { eq: false }
+        extended_entities: { media: { elemMatch: { type: { eq: "photo" } } } }
+      }
+    ) {
       edges {
         node {
-          id
           full_text
-          entities {
+          extended_entities {
             media {
-              id
-              type
-              url
               media_url_https
+              url
             }
           }
         }
