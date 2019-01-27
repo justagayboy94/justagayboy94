@@ -7,7 +7,8 @@ export enum Color {
   Primary = "yellow",
   MainFontColor = "#3B3B3B",
   White = "white",
-  Black = "black"
+  Black = "black",
+  Grey = "#D4D4D4"
 }
 
 export interface Theme {
@@ -82,6 +83,18 @@ export interface Theme {
       marginBottom: number;
     };
   };
+
+  month: {
+    gridGap: number;
+
+    day: {
+      backgroundColor: Color;
+      color: Color;
+      font: string;
+      height: number;
+      padding: number;
+    };
+  };
 }
 
 export const theme: Theme = {
@@ -142,6 +155,18 @@ export const theme: Theme = {
     marginBottom: RHYTHM_BASE * 4,
     paddingLeftRight: RHYTHM_BASE * 3,
     paddingTopBottom: RHYTHM_BASE * 2
+  },
+
+  month: {
+    gridGap: RHYTHM_BASE,
+
+    day: {
+      backgroundColor: Color.Grey,
+      color: Color.Black,
+      font: TEXT_FONT_FAMILY,
+      height: RHYTHM_BASE * 15,
+      padding: RHYTHM_BASE
+    }
   },
 
   rythmBase: RHYTHM_BASE,
